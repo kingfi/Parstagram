@@ -9,6 +9,7 @@
 import UIKit
 import Parse
 import AlamofireImage
+import Alamofire
 
 class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -21,6 +22,8 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         tableView.delegate = self
         tableView.dataSource = self
+        DataRequest.addAcceptableImageContentTypes(["application/octet-stream"])
+
 
         // Do any additional setup after loading the view.
     }
