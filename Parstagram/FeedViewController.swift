@@ -16,13 +16,14 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var tableView: UITableView!
     
     var posts =  [PFObject]()
+    var refreshControl: UIRefreshControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.delegate = self
         tableView.dataSource = self
-        DataRequest.addAcceptableImageContentTypes(["application/octet-stream"])
+        DataRequest.addAcceptableImageContentTypes(["application/octet-stream"]) 
 
 
         // Do any additional setup after loading the view.
