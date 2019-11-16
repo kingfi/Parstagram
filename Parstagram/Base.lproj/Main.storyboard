@@ -94,7 +94,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="418" id="vJi-hw-9of">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="418" id="vJi-hw-9of" customClass="PostCell" customModule="Parstagram" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="418"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vJi-hw-9of" id="qpz-fx-zaq">
@@ -114,8 +114,11 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Wow i love pics" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1On-MD-50c">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Wow i love pics" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1On-MD-50c">
                                                     <rect key="frame" x="66" y="360" width="339" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="339" id="JKF-SF-t5j"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -126,6 +129,7 @@
                                                 <constraint firstItem="BfO-gp-0XB" firstAttribute="top" secondItem="qpz-fx-zaq" secondAttribute="top" constant="8" id="G4c-x7-GWV"/>
                                                 <constraint firstItem="cY8-hU-gnc" firstAttribute="top" secondItem="BfO-gp-0XB" secondAttribute="bottom" constant="8" id="Hjr-hx-IF2"/>
                                                 <constraint firstItem="cY8-hU-gnc" firstAttribute="top" secondItem="BfO-gp-0XB" secondAttribute="bottom" constant="8" id="Qjt-MG-mG2"/>
+                                                <constraint firstItem="1On-MD-50c" firstAttribute="baseline" secondItem="cY8-hU-gnc" secondAttribute="baseline" id="S40-Yt-1MY"/>
                                                 <constraint firstItem="BfO-gp-0XB" firstAttribute="top" secondItem="qpz-fx-zaq" secondAttribute="top" constant="8" id="Tm0-7d-ZGC"/>
                                                 <constraint firstItem="BfO-gp-0XB" firstAttribute="leading" secondItem="qpz-fx-zaq" secondAttribute="leading" constant="8" id="bWk-RG-G12"/>
                                                 <constraint firstItem="BfO-gp-0XB" firstAttribute="leading" secondItem="qpz-fx-zaq" secondAttribute="leading" constant="8" id="c2e-e8-pE8"/>
@@ -136,8 +140,14 @@
                                                 <constraint firstAttribute="trailing" secondItem="BfO-gp-0XB" secondAttribute="trailing" constant="8" id="sLY-vl-72H"/>
                                                 <constraint firstItem="1On-MD-50c" firstAttribute="leading" secondItem="cY8-hU-gnc" secondAttribute="trailing" constant="10" id="uto-KU-i8c"/>
                                                 <constraint firstAttribute="trailing" secondItem="BfO-gp-0XB" secondAttribute="trailing" constant="8" id="wYc-7N-brd"/>
+                                                <constraint firstItem="1On-MD-50c" firstAttribute="firstBaseline" secondItem="cY8-hU-gnc" secondAttribute="firstBaseline" id="zx2-e4-7xe"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="captionLabel" destination="1On-MD-50c" id="Co8-Nn-Th6"/>
+                                            <outlet property="photoView" destination="BfO-gp-0XB" id="YVK-gE-WLh"/>
+                                            <outlet property="usernameLabel" destination="cY8-hU-gnc" id="XR7-gc-oBJ"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -152,6 +162,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="fxK-iL-203" id="60Y-uZ-61h"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CxB-Sw-MNM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
