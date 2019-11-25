@@ -22,6 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             configuration.server = "https://stormy-oasis-77031.herokuapp.com/parse"
         }))
         
+       
+        
         return true
     }
 
